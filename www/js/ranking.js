@@ -17,16 +17,15 @@ function toRanking() {
 // 【mBaaS】保存したデータの検索と取得
 function checkRanking() {
     // **********【問題２】ランキングを表示しよう！**********
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    var HighScore = ncmb.DataStore("GameScore");
+
+    HighScore.order("score", true).limit(5).fetchAll().then(function(Score){
+        console.log("検索に成功しました。");
+        setData(Score);
+        })
+        .catch(function(error){
+            console.log("検索に失敗しました。 エラー:" + error);
+        });    
     
     // ******************************************************
 }
