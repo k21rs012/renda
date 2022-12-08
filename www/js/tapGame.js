@@ -46,8 +46,8 @@ function saveScore(name, score) {
     gameScore.save().then(function () {
         console.log("保存に成功しました。");
     })
-        .catch(function () {
-            console.log("保存に失敗しました。");
+        .catch(function (error) {
+            console.log("保存に失敗しました。 エラー:" + error);
         });
 
     // ********************************************************
